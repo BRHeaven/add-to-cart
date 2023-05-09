@@ -1,0 +1,47 @@
+#tabs {
+    width: 100%;
+    padding: 3em 2em;
+    margin: 0 auto;
+    #listNavProductTabs {
+        display: grid;
+        grid-template-columns: repeat(12 , 1fr);
+        gap: 10px;
+        width: 100%;
+        margin: 0 auto 20px;
+        .tabsItem {
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+            button {
+                display: block;
+                width: 100%;
+                padding: 10px 0;
+                margin: 0 auto;
+                @include styleText( $fs-2, $fw-bold, $tt-capitalize, $ta-center, .5px);
+                @include colorText( $color-gray-500, $color-lime-500, 1px, $color-gray-500, 5px);
+                transition: all .3s;
+                &:hover {
+                    @include colorText( $color-lime-700, $color-white, 1px, $color-lime-700, 15px);
+                }
+                &.active {
+                    @include colorText( $color-blue-500, $color-white, 1px, $color-blue-500, 20px);
+                }
+            }
+        }
+    }
+    #listProductTabs {
+        display: block;
+        width: 100%;
+        padding: 2em;
+        margin: 0 auto;
+        border: 2px solid $color-lime-a400;
+        border-radius: 10px;
+        .tabContent {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 5px;
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+}

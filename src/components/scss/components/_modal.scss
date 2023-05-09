@@ -1,0 +1,119 @@
+.modalContent {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    .modalImage {
+        display: block;
+        padding: 2em 0;
+        img {
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+    .modalInfoDetail {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ul {
+            li {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                width: 100%;
+                padding: 0;
+                margin: 0 auto;
+                p {
+                    @include colorText( $color-gray-800, $color-transparent, 1px, $color-black, unset);
+                    padding: 10px 5px;
+                }
+                .title {
+                    @include styleText( $fs-2, $fw-bold, $tt-uppercase, $ta-start, .2px);
+                }
+                .value {
+                    @include styleText( $fs-2, $fw-lighter, $tt-capitalize, $ta-start, .3px);
+                    color: black;
+                }
+            }
+        }
+    }
+}
+.modalCart {
+    width: 100%;
+    margin: 0 auto;
+    .title {
+        th {
+            padding: 5px 10px;
+            border: 1px solid $color-black;
+            p {
+                @include styleText( $fs-2, $fw-bold, $tt-uppercase, $ta-center, .2px);
+                @include colorText( $color-gray-800, $color-transparent, 1px, $color-transparent, unset);
+            }
+        }
+    }
+    .cardCart {
+        td {
+            padding: 5px 10px;
+            border: 1px solid $color-black;
+            .quantity {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                align-items: center;
+                .addQuantity {
+                    background-color: $color-green-600;
+                    transition: all .3s;
+                    &:hover, &:focus {
+                        color: $color-green-600;
+                        background-color: $color-transparent;
+                        border: 1px solid $color-green-600;
+                    }
+                }
+                .reduceQuantity {
+                    background-color: $color-red-500;
+                    transition: all .3s;
+                    &:hover, &:focus {
+                        color: $color-red-500;
+                        background-color: $color-transparent;
+                        border: 1px solid $color-red-500;
+                    }
+                }
+            }
+            p {
+                @include styleText( $fs-2, $fw-bold, $tt-uppercase, $ta-center, .2px);
+                @include colorText( $color-gray-700, $color-transparent, 1px, $color-transparent, unset);
+            }
+            img {
+                height: 150px;
+                width: 150px;
+            }
+            button {
+                padding: 10px;
+                @include styleText( $fs-1, $fw-bold, $tt-uppercase, $ta-center, .2px);
+                @include colorText( $color-white, $color-red-600, 1px, $color-transparent, unset);
+                transition: all .3s;
+                &:hover, &:focus {
+                    color: $color-red-600;
+                    background-color: $color-transparent;
+                    border: 1px solid $color-red-600;
+                }
+            }
+        }
+    }
+}
+
+#addToCart {
+    .modal-content {
+        width: 800px;
+            .modal-footer {
+                button {
+                    @include styleText( $fs-2, $fw-bold, $tt-uppercase, $ta-center, .2px);
+                    @include colorText( $color-white, $color-green-700, 1px, $color-transparent, 10px);
+                    transition: all .3s;
+                    &:hover, &:focus {
+                        color: $color-green-700;
+                        background-color: $color-transparent;
+                        border: 1px solid $color-green-700;
+                }
+            }
+        }
+    }
+}

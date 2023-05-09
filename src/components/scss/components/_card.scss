@@ -1,0 +1,72 @@
+.card {
+    display: block;
+    padding: 10px;
+    margin: 0 auto;
+    border: 2px solid $color-gray-400;
+    border-radius: 10%;
+    .cardImage {
+        img {
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+    .cardInfo {
+        padding: 10px 0;
+        margin: 10px auto;
+        h3 {
+            @include styleText( $fs-3 + 3, $fw-bold, $tt-capitalize, $ta-center, .5px);
+            @include colorText( $color-gray-800, $color-transparent, 1px, $color-transparent, unset);
+        }
+        p {
+            @include styleText( $fs-3, $fw-bolder, $tt-capitalize, $ta-center, unset);
+            @include colorText( $color-black, $color-transparent, 1px, $color-transparent, unset);
+        }
+    }
+    .cardButton {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        button {
+            position: relative;
+            @include styleText( $fs-2, $fw-bold, $tt-capitalize, $ta-center, .4px);
+            overflow: hidden;
+            transition: all .4s;
+            &::after {
+                content: '';
+                position: absolute;
+                top: -20%;
+                left: -190%;
+                display: block;
+                width: 150%;
+                height: 150%;
+                background-color: $color-gray-600;
+                opacity: .4;
+                transform: skewX(-30deg);
+                transition: all .4s;
+            }
+            &:hover {
+                &::after{
+                    left: -30%;
+                }
+            }
+        }
+        .detailCard {
+            @include colorText( $color-white, $color-blue-a400, 1px, $color-transparent, 8%);
+            padding: 5px 20px;
+            &:hover {
+                color: $color-blue-a400;
+                background-color: $color-white;
+                border: 1px solid $color-blue-a400;
+            }
+        }
+        .addToCartCard {
+            @include colorText( $color-white, $color-green-600, 1px, $color-transparent, 8%);
+            padding: 5px 20px;
+            &:hover {
+                color: $color-green-600;
+                background-color: $color-white;
+                border: 1px solid $color-green-600;
+            }
+        }
+    }
+}

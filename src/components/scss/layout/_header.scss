@@ -1,0 +1,144 @@
+header {
+    background-color: $color-lime-500;
+    .headerContent {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        width: 95%;
+        padding: 1.5em 0;
+        margin: 0 auto;
+        .headerLogo {
+            display: flex;
+            width: 100%;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+            i {
+                font-size: 4em;
+                color: $color-gray-800;
+                animation: turnAround infinite 5s linear;
+            }
+        }
+        .headerNav {
+            grid-column: 2 / span 6;
+            .headerListNav {
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                gap: 5px;
+                .headerItem {
+                    display: flex;
+                    justify-content:center;
+                    align-items: start;
+                    .headerLink {
+                        display: block;
+                        @include styleText( $fs-2, $fw-bold, $tt-capitalize, $ta-center, .5px);
+                        @include colorText( $color-blue-500, $color-transparent, 1px, $color-transparent, unset);
+                        transition: all .3s;
+                    }
+                    &:hover {
+                        .headerLink {
+                            color: $color-gray-700;
+                        }
+                    }
+                }
+            }
+        }
+        .headerSearch {
+            grid-column: 8 / span 3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            form {
+                display: grid;
+                grid-template-columns: repeat(4 ,1fr);
+                width: 100%;
+                margin: 0 auto;
+                input {
+                    grid-column: 1 / span 3;
+                    display: block;
+                    padding: 10px 5px;
+                    @include styleText( $fs-2, normal, normal, $ta-start, .5px);
+                    @include colorText( $color-gray-600, $color-white, 2px, $color-gray-400, unset);
+                    transition: all .3s;
+                    &::placeholder{
+                        @include styleText( $fs-2, $fw-bold, $tt-capitalize, $ta-start, .5px);
+                    }
+                    &:hover {
+                        border: 2px solid $color-gray-500;
+                    }
+                    &:focus {
+                        border: 2px solid $color-gray-600;
+                        outline: none;
+                    }
+                }
+                button {
+                    display: block;
+                    width: 100%;
+                    margin: 0 auto;
+                    background-color: $color-lime-300;
+                    border: 2px solid $color-gray-400;
+                    transition: all .4s;
+                    &:hover {
+                        background-color: $color-white;
+                        border: 2px solid $color-gray-400;
+                    }
+                }
+            }
+        }
+        .headerUser {
+            grid-column: 11 / span 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            #user {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                a {
+                    @include styleText( $fs-2, $fw-bold, $tt-capitalize, $ta-center, 1px);
+                    @include colorText( $color-gray-600, $color-transparent, 2px, $color-transparent, unset);
+                    transition: all .4s;
+                }
+                i {
+                    padding: 0 5px;
+                    color: $color-gray-500;
+                    transition: all .4s;
+                }
+                &:hover {
+                    a {
+                        color: $color-blue-600;
+                    }
+                    i {
+                        color: $color-blue-600;
+                    }
+                }
+            }
+            .headerButton {
+                display: flex;
+                padding: 5px 0;
+                justify-content: center;
+                align-items: center;
+                button {
+                    @include styleText( $fs-2, $fw-bold, $tt-capitalize, $ta-center, 1px);
+                    @include colorText( $color-white, $color-blue-600,  1px, $color-transparent, 20px);
+                    input {
+                        display: inline;
+                        width: 40px;
+                        text-align: center;
+                        color: $color-white;
+                        background-color: $color-transparent;
+                        border: unset;
+                    }
+                    &:hover {
+                        color: $color-gray-600;
+                        background-color: $color-white;
+                        border: 1px solid $color-blue-600;
+                        input {
+                            color: $color-gray-600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
